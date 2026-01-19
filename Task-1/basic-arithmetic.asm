@@ -26,6 +26,7 @@ org 0000h
 	mov	b,	#05h
 	div	ab		;-- Acc = A/B	(div instr. only take input from A,B)
 	mov	r3,	a	;-- R3 = Acc
+;------ main program END --------;
 
 here:	sjmp	here		;-- Infinite loop to prevent crash
 
