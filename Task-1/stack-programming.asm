@@ -27,4 +27,8 @@ org 0000h
 	push	2
 	push	3
 	push	4
+	;------------ main program END -----------;
+
+loop:	sjmp	here
+
 end
