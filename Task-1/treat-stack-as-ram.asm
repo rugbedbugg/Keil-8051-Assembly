@@ -20,6 +20,6 @@ org 0000h
 	pop	4		;-- pop to 04h (R4 B-0)
 ;------- main program END -------;
 
-loop:	sjmp	here
+here:	sjmp	here
 
 end

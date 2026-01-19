@@ -17,15 +17,20 @@ org 0000h
 	clr	a
 	mov	a,	#05h
 	mov	b,	#05h
-	mul	ab		;-- Acc = A*B	(mul instr. only take input from A,B)
+	mul	ab		;-- mul instr. only take input from A,B
 	mov	r2,	a	;-- R2 = Acc
+	;-- Accumulator = higher-byte(A*B)
+	;-- 	      B = lower-byte(A*B)
 
 	;------ Division -----;
 	clr	a
 	mov	a,	#05h
 	mov	b,	#05h
-	div	ab		;-- Acc = A/B	(div instr. only take input from A,B)
+	div	ab		;-- div instr. only take input from A,B
 	mov	r3,	a	;-- R3 = Acc
+	;-- Accumulator = Quotient(A/B)
+	;-- 	      B = Remainder(A/B)
+
 ;------ main program END --------;
 
 here:	sjmp	here		;-- Infinite loop to prevent crash
